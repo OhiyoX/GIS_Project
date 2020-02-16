@@ -5,7 +5,7 @@ from matplotlib.colors import rgb2hex
 import numpy as np
 import pandas as pd
 
-plt.figure(figsize=(12, 8), dpi=200)
+plt.figure(figsize=(10, 8), dpi=200)
 
 china_m = Basemap(llcrnrlon=77, llcrnrlat=14, urcrnrlon=140, urcrnrlat=51,
                   projection='lcc', lat_1=33, lat_2=45, lon_0=100)
@@ -61,4 +61,5 @@ for nshape, seg in enumerate(china_m.state):
     poly = Polygon(seg, facecolor=color, edgecolor=color)
     ax.add_patch(poly)
 
+plt.savefig('result.png',bbox_tight=True)
 plt.show()
